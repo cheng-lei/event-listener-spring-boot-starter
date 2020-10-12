@@ -38,8 +38,8 @@ public class EventServiceStrategyTest {
         System.out.println("收到Async：" + message);
     }
 
-    @EventListener(name = TEST_EVENT_SERVICE, type = RedisAsyncLocalEventService.class)
-    public void listRedis(String message) {
-        System.out.println("收到Redis：" + message);
-    }
+//    @EventListener(name = TEST_EVENT_SERVICE, type = RedisAsyncLocalEventService.class)
+//    public void listRedis(String message) {
+//        System.out.println("收到Redis：" + message);
+//    }
 }

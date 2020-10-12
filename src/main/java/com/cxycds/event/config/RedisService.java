@@ -4,6 +4,8 @@ import org.redisson.Redisson;
 import org.redisson.api.RedissonClient;
 import org.redisson.config.Config;
 import org.redisson.config.SingleServerConfig;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +16,7 @@ import javax.annotation.Resource;
  * Created by leicheng on 2020/10/10.
  */
 @Service
+@ConditionalOnBean(RedisEventConfig.class)
 public class RedisService {
     @Resource
     private RedisEventConfig redisEventConfig;

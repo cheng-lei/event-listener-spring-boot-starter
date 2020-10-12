@@ -2,9 +2,12 @@ package com.cxycds.event.impl;
 
 import com.cxycds.event.AbstractEventService;
 import com.cxycds.event.annotation.EventListener;
+import com.cxycds.event.config.RedisEventConfig;
 import com.cxycds.event.config.RedisService;
 import org.redisson.api.RTopic;
 import org.redisson.api.listener.MessageListener;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -18,6 +21,7 @@ import java.util.Map;
  * Created by leicheng on 2020/10/10.
  */
 @Component
+@ConditionalOnBean(RedisEventConfig.class)
 public class RedisAsyncLocalEventService extends AbstractEventService {
     @Resource
     private RedisService redisService;
