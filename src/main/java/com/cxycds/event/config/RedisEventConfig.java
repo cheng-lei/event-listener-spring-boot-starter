@@ -10,7 +10,7 @@ import javax.annotation.PostConstruct;
  * Created by leicheng on 2020/10/10.
  */
 @Component
-@ConfigurationProperties("spring.event.listener.redis")
+@ConfigurationProperties("event.listener.redis")
 public class RedisEventConfig {
     private String address;
     private String password;
